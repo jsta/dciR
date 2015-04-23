@@ -1,7 +1,7 @@
 dciR
 ====
 
-A modification of the directional connectivity index calculation from Larsen et al. (2012). Essentially replaces [http://dgleich.github.com/matlab-bgl/](MatlabBGL) with [octave-networks-toolbox](https://github.com/aeolianine/octave-networks-toolbox). For convenience, Octave is called from R using [http://cran.r-project.org/web/packages/RcppOctave/index.html](RcppOctave).
+A modification of the directional connectivity index calculation from Larsen et al. (2012). Essentially replaces [MatlabBGL](http://dgleich.github.com/matlab-bgl/) with [octave-networks-toolbox](https://github.com/aeolianine/octave-networks-toolbox). For convenience, Octave is called from R using [RcppOctave](http://cran.r-project.org/web/packages/RcppOctave/index.html).
 
 Requires Octave and RcppOctave (verified to work with version 3.8.1 and 0.14.5 respectively)
 
