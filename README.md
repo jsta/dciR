@@ -16,6 +16,7 @@ Requires Octave and RcppOctave (verified to work with version 3.8.1 and 0.14.5 r
 ## Examples
    ```R
    #The example below reproduces figure 3 from Larsen et al. (2012)
+   library(dciR)
    library(RcppOctave)
    
    #load test matricies####
