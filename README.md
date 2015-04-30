@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 dciR
 ====
 
@@ -45,6 +48,11 @@ Requires Octave and RcppOctave (verified to work with version 3.8.1 and 0.14.5 r
    
    par(mfrow=c(1,5))
    lapply(c(c1,c2,s1,r1,d1),function(x) plot(x,bty="n",box=FALSE,axes=FALSE,legend=FALSE))
+   ```
+  
+   ![](inst/images/fig4.png)
+   
+   ```R
    
    #The example below reproduces Figure 5####
    ret<-list()
@@ -63,17 +71,25 @@ Requires Octave and RcppOctave (verified to work with version 3.8.1 and 0.14.5 r
       
    ret<-cbind(matrix(unlist(ret),ncol=7,byrow=T),aglist)
    
-   par(mfrow=c(1,1))
-   plot(ret[,7]/10000,ret[,1],log="y",yaxt="n",xlim=c(0.1,10000),ylim=c(1,1000),xlab="Number of nodes x 10^4",ylab="Computation time (s)")
+   par(mfrow=c(1,2))
+   plot(ret[,7]/10000,ret[,1],log="y",yaxt="n",xlim=c(0,1),ylim=c(1,1000),xlab="Number of nodes x 10^4",ylab="Computation time (s)")
    labels<-sapply(seq(0,3,1),function(i) as.expression(bquote(10^ .(i))))
    axis(2,at=c(1,10,100,1000),labels=labels)
+   
+   plot(ret[,7]/10000,ret[,1],xlab="Number of nodes x 10^4",ylab="")
+   
+   ```
+   ![](inst/images/fig5.png)
+   ```R
       
    #The example below reproduces Figure 6
    
    ret<-matrix(unlist(lapply(c(c1,c2,s1,d1),function(x) ag_dci(x,16))),ncol=7,byrow=T)
    barplot(ret[,6],names.arg=c("Conserved1","Conserved2","Sim1","Degraded1"),ylim=c(0,1),las=2)
-      
    ```
+   
+   ![](inst/images/fig6.png)
+      
    
 ## References 
 
