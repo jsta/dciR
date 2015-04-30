@@ -26,7 +26,8 @@ start_nodes = find(pixelx~=R); %Nodes in the last row of the image cannot be sta
 num = 0; %Initialize numerator of summation
 den = 0; %Initialize denominator of summation
 for ii = 1:length(start_nodes)
-    d = dijkstra(distance, start_nodes(ii),[]); %A vector of the shortest path between starting/source node and all other nodes
+    %d = shortest_paths(distance, start_nodes(ii)); %A vector of the shortest path between starting/source node and all other nodes
+    d = dijkstra(distance, start_nodes(ii),[]); %jsta switched to aont
     r = pixelx(start_nodes(ii)); %The row of the starting/source node
     for jj = r+1:R
         end_nodes = find(pixelx == jj);
