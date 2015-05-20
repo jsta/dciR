@@ -1,13 +1,12 @@
 Package: dciR
 SystemRequirements: Octave
 Author: Joseph Stachelek
-Version: 0.0.1
+Version: 0.0.2
 Title: Calculate directional connectivity index without Matlab
 Description: A modification of the directional connectivity index calculation from Larsen et al. (2012). Essentially replaces MatlabBGL with octave-networks-toolbox. For convenience, Octave is called from R using RcppOctave.
-Imports: RcppOctave
+Depends: RBGL,RcppOctave
 License: GPL (>= 2)
 LazyData: true
-Roxygen: list(wrap=TRUE)
 Date: 2015-04-22
 
 
