@@ -57,7 +57,7 @@ Requires RBGL, Octave, and RcppOctave (verified to work with version 3.8.1 and 0
    
    #The example below reproduces Figure 5####
    ret<-list()
-   aglist<-10:22
+   aglist<-8:22
    
    ag_dci<-function(c1,ag){
    c1r<-aggregate(c1,ag,fun=median)>0.7

@@ -4,7 +4,7 @@
 \alias{dciu_rbgl}
 \title{Directional connectivity index distance looping}
 \usage{
-dciu_rbgl(start_nodes, adjacency, dist, pixelx, R)
+dciu_rbgl(start_nodes, adjacency, dist, pixelx, R, dx, adjL)
 }
 \description{
 Directional connectivity index distance looping

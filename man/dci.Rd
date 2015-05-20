@@ -7,24 +7,23 @@
 dci(mat, xgrain, ygrain)
 }
 \arguments{
-  \item{mat}{matrix 2D matrix of zeros and ones, in which
-  ones represent the landscape patch of interest. The
-  axis of interest along which directional connectivity is
-  computed is dimension 1 of this matrix.} \item{xgrain}
-  {pixel length in cm (i.e., along dimension 1 of the
-  variable "state")} \item{ygrain}{pixel width in cm (i.e.,
-  along dimension 2 of the variable "state")}
+\item{mat}{matrix 2D matrix of zeros and ones, in which ones represent the landscape patch of interest. The axis of interest along which directional connectivity is computed is dimension 1 of this matrix.}
+
+\item{xgrain}{pixel length in cm (i.e., along dimension 1 of the variable "state")}
+
+\item{ygrain}{pixel width in cm (i.e., along dimension 2 of the variable "state")}
 }
 \description{
 Directional connectivity matrix
 }
 \details{
-This function first converts a binary image to an adjacency
-matrix (larsen::im2adjacency). Next, this matrix is fed into
-a modified version of DCIu (DCIu_aont). DCIu_aont calls an
-underlying distance function in the process of returning a
-DCI value. The distance function (dijkstra_edit) requires
-requires an adjacency list which is created with the
-adj2adjL function.
+This function first converts a binary image to an adjacency matrix (larsen::im2adjacency). Next, this matrix is fed into a modified version of DCIu (DCIu_aont). DCIu_aont calls an underlying distance function in the process of returning a DCI value. The distance function (dijkstra_edit) requires requires an adjacency list which is created with the adj2adjL function.
+}
+\examples{
+mat <- matrix(c(0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,0,0),nrow=5,byrow=T)
+mat<-matrix(c(1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0),nrow=5,byrow=T)
+xgrain<-1
+ygrain<-1
+dci(mat,xgrain,ygrain)
 }
 

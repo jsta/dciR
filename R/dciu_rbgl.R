@@ -40,8 +40,10 @@ dciu_rbgl<-function(start_nodes,adjacency,dist,pixelx,R,dx,adjL){
   g2<-ftM2graphNEL(adjLfull,wL,edgemode="directed")
   
   #loop through graph####
+  pb<-txtProgressBar(style=3,min=1,max=length(start_nodes))
   
   for(i in 1:length(start_nodes)){
+    setTxtProgressBar(pb,i)
     #print(i)
     #i<-1
     if(any(nodes(g2)==as.character(start_nodes[i]))){
@@ -58,6 +60,8 @@ dciu_rbgl<-function(start_nodes,adjacency,dist,pixelx,R,dx,adjL){
     }
   }
   }
+  close(pb)
+  
   num/den
     
 }
