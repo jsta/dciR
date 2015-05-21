@@ -6,19 +6,22 @@
 \usage{
 dciu_rbgl(start_nodes, adjacency, dist, pixelx, R, dx, adjL)
 }
+\arguments{
+\item{start_nodes}{list of nodes}
+
+\item{adjacency}{matrix representing adjacency among nodes}
+
+\item{dist}{a distance matrix taking into account longer diagonal distances}
+
+\item{pixelx}{the rows positions of each node}
+
+\item{R}{integer number of matrix ros}
+
+\item{dx}{numeric cell (grain) distance}
+
+\item{adjL}{list of adjacent nodes}
+}
 \description{
 Directional connectivity index distance looping
-}
-\examples{
-mat <- matrix(c(0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,0,0),nrow=5,byrow=T)
-xgrain<-1
-ygrain<-1
-#run first part of dci.R through dciu_pre
-adjacency<-adj$adjacency
-start_nodes<-dciu_pre$start_nodes
-pixelx<-adj$pixelx
-R<-dciu_pre$R
-dist<-adj$distance
-dx<-dciu_pre$dx
 }
 

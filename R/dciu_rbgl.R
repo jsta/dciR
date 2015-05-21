@@ -1,16 +1,15 @@
 #'@name dciu_rbgl
+#'@import RBGL
+#'@import graph
 #'@title Directional connectivity index distance looping
+#'@param start_nodes list of nodes
+#'@param adjacency matrix representing adjacency among nodes
+#'@param dist a distance matrix taking into account longer diagonal distances
+#'@param pixelx the rows positions of each node
+#'@param R integer number of matrix ros
+#'@param dx numeric cell (grain) distance
+#'@param adjL list of adjacent nodes
 #'@export
-#'@examples mat <- matrix(c(0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,0,0),nrow=5,byrow=T)
-#'xgrain<-1
-#'ygrain<-1
-#'#run first part of dci.R through dciu_pre
-#'adjacency<-adj$adjacency
-#'start_nodes<-dciu_pre$start_nodes
-#'pixelx<-adj$pixelx
-#'R<-dciu_pre$R
-#'dist<-adj$distance
-#'dx<-dciu_pre$dx
 
 dciu_rbgl<-function(start_nodes,adjacency,dist,pixelx,R,dx,adjL){
   num<-0

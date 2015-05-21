@@ -1,12 +1,14 @@
 #'@name dci
+#'@import RcppOctave
+#'@import RBGL
 #'@title Directional connectivity matrix
 #'@param mat matrix 2D matrix of zeros and ones, in which ones represent the landscape patch of interest. The axis of interest along which directional connectivity is computed is dimension 1 of this matrix.
 #'@param xgrain pixel length in cm (i.e., along dimension 1 of the variable "state")
 #'@param ygrain pixel width in cm (i.e., along dimension 2 of the variable "state")
 #'@details This function first converts a binary image to an adjacency matrix (larsen::im2adjacency). Next, this matrix is fed into a modified version of DCIu (DCIu_aont). DCIu_aont calls an underlying distance function in the process of returning a DCI value. The distance function (dijkstra_edit) requires requires an adjacency list which is created with the adj2adjL function.
 #'@export
-#'@examples mat <- matrix(c(0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,0,0),nrow=5,byrow=T)
-#'mat<-matrix(c(1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0),nrow=5,byrow=T)
+#'@examples mat <- matrix(c(0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,0,0),nrow=5,byrow=TRUE)
+#'mat<-matrix(c(1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0),nrow=5,byrow=TRUE)
 #'xgrain<-1
 #'ygrain<-1
 #'dci(mat,xgrain,ygrain)
@@ -38,6 +40,9 @@ dci<-function(mat,xgrain,ygrain){
   pixelx<-adj$pixelx
   R<-dciu_pre$R
   dx<-dciu_pre$dx
-    
+   
+  #Rprof()
   suppressMessages(dciu_rbgl(start_nodes,adjacency,dist,pixelx,R,dx,adjL))
+  #Rprof(NULL)
+  #summaryRprof()
 }

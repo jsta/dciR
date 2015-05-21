@@ -57,7 +57,7 @@ Requires RBGL, Octave, and RcppOctave (verified to work with version 3.8.1 and 0
    
    #The example below reproduces Figure 5####
    ret<-list()
-   aglist<-8:22
+   aglist<-4:22
    
    ag_dci<-function(c1,ag){
    c1r<-aggregate(c1,ag,fun=median)>0.7
@@ -73,7 +73,7 @@ Requires RBGL, Octave, and RcppOctave (verified to work with version 3.8.1 and 0
    ret<-cbind(matrix(unlist(ret),ncol=7,byrow=T),aglist)
    
    par(mfrow=c(1,2))
-   plot(ret[,7]/10000,ret[,1],log="y",yaxt="n",xlim=c(0,3),ylim=c(1,1000),xlab="Number of nodes x 10^4",ylab="Computation time (s)")
+   plot(ret[,7]/10000,ret[,1],log="y",yaxt="n",xlim=c(0,3),ylim=c(1,10000),xlab="Number of nodes x 10^4",ylab="Computation time (s)")
    labels<-sapply(seq(0,3,1),function(i) as.expression(bquote(10^ .(i))))
    axis(2,at=c(1,10,100,1000),labels=labels)
    
