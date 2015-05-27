@@ -3,5 +3,4 @@
 export(dci)
 export(dciu_rbgl)
 import(RBGL)
-import(RcppOctave)
 import(graph)
