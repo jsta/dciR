@@ -1,6 +1,8 @@
 dciR
 ====
 
+[![Project Status: Unsupported - The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](http://www.repostatus.org/badges/latest/unsupported.svg)](http://www.repostatus.org/#unsupported)
+
 THIS VERSION ONLY WORKS ON LINUX DUE TO INCOMPATABILITY BETWEEN RcppOctave AND WINDOWS! 
 
 A modification of the directional connectivity index calculation from Larsen et al. (2012). Essentially replaces [MatlabBGL](http://dgleich.github.com/matlab-bgl/) with [RBGL](http://www.bioconductor.org/packages/release/bioc/html/RBGL.html). For convenience, Octave is called from R using [RcppOctave](http://cran.r-project.org/web/packages/RcppOctave/index.html).
